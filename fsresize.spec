@@ -14,6 +14,11 @@ FAT16 and FAT32 resizes your FAT16 and FAT32 partitions. There is no need to
 defragment (this'll do it for you!) It's running quite acceptably
 speed-wise.
 
+%description -l pl
+Program ten zmienia s³uzy do zmiany rozmiaru partycji FAT16 i FAT32. Nie trzeba
+ich wcze¶niej defragmentowaæ (program sam zatroszczy siê o co trzeba!).
+Szybko¶æ programu jest zadowalaj±ca.
+
 %prep
 %setup -q
 
