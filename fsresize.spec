@@ -5,8 +5,6 @@ Version:	0.08
 Release:	2
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	http://www.alphalink.com.au/~clausen/fsresize/%{name}-%{version}.tar.gz
 URL:		http://www.alphalink.com.au/~clausen/fsresize/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
