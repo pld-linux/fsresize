@@ -37,9 +37,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root)  /usr/sbin/fsresize
 %{_mandir}/man8/*
-
-%changelog
-* Sat Jun 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.08-2]
-- based on spec written by Andrew Clausen <clausen@alphalink.com.au>,
-- spec rewrited to be PLD coding style compliant.
