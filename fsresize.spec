@@ -23,7 +23,7 @@ co trzeba!). Szybko¶æ programu jest zadowalaj±ca.
 %setup -q
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
