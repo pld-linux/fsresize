@@ -1,37 +1,44 @@
-%define ver     0.08
-%define release 1
-
-Summary: FAT16 and FAT32 resizer for Linux
-Name: fsresize
-Version: %ver
-Release: %release
-Copyright: GPL
-Group: Utilities/System
-Source: http://www.alphalink.com.au/~clausen/fsresize/fsresize-%{ver}.tar.gz
-BuildRoot: /tmp/fsresize-root
-Packager: Andrew Clausen <clausen@alphalink.com.au>
-URL: http://www.alphalink.com.au/~clausen/fsresize
+Summary:	FAT16 and FAT32 resizer for Linux
+Name:		fsresize
+Version:	0.08
+Release:	2
+Copyright:	GPL
+Group:		Utilities/System
+Source:		http://www.alphalink.com.au/~clausen/fsresize/%{name}-%{version}.tar.gz
+URL:		http://www.alphalink.com.au/~clausen/fsresize/
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
-FAT16 and FAT32 resizer for Linux.
-
-%changelog
+FAT16 and FAT32 resizes your FAT16 and FAT32 partitions. There is no need to
+defragment (this'll do it for you!) It's running quite acceptably
+speed-wise.
 
 %prep
-%setup
+%setup -q
 
 %build
 make CFLAGS="$RPM_OPT_FLAGS"
 
 %install
-mkdir -p $RPM_BUILD_ROOT/usr/{sbin,man/man8}
-install -m755 fsresize      $RPM_BUILD_ROOT/usr/sbin/fsresize
-install -m444 fsresize.8    $RPM_BUILD_ROOT/usr/man/man8/fsresize.8
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
+install -s fsresize $RPM_BUILD_ROOT%{_sbindir}
+install fsresize.8 $RPM_BUILD_ROOT%{_mandir}/man8
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
+	README HACKING TODO
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files 
-%doc README HACKING TODO
-%attr(-, root, root)    /usr/sbin/fsresize
-%attr(-, root, root)    /usr/man/man8/fsresize.8
+%attr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root)  /usr/sbin/fsresize
+/usr/man/man8*
+
+%changelog
+* Sat Jun 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.08-2]
+- based on spec written by Andrew Clausen <clausen@alphalink.com.au>,
+- spec rewrited to be PLD coding style compliant.
