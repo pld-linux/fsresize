@@ -32,10 +32,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/* \
 rm -rf $RPM_BUILD_ROOT
 
 %files 
-%attr(644,root,root,755)
+%defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root)  /usr/sbin/fsresize
-/usr/man/man8*
+%{_mandir}/man8/*
 
 %changelog
 * Sat Jun 12 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
