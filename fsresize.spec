@@ -7,7 +7,7 @@ Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source:		http://www.alphalink.com.au/~clausen/fsresize/%{name}-%{version}.tar.gz
 URL:		http://www.alphalink.com.au/~clausen/fsresize/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 FAT16 and FAT32 resizes your FAT16 and FAT32 partitions. There is no need to
