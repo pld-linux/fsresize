@@ -32,13 +32,11 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 install fsresize $RPM_BUILD_ROOT%{_sbindir}
 install fsresize.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
-gzip -9nf README HACKING TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README HACKING TODO
 %attr(755,root,root) %{_sbindir}/fsresize
 %{_mandir}/man8/*
