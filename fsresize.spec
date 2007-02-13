@@ -1,5 +1,5 @@
 Summary:	FAT16 and FAT32 resizer for Linux
-Summary(pl.UTF-8):   Program do zmiany rozmiaru partycji FAT16 i FAT32
+Summary(pl.UTF-8):	Program do zmiany rozmiaru partycji FAT16 i FAT32
 Name:		fsresize
 Version:	0.08
 Release:	2
